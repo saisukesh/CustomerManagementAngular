@@ -1,0 +1,32 @@
+﻿@model WebApplication2.ViewModel.CustomerViewModel
+    @using WebApplication2.Models;
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<script src="~/Scripts/angular.js"></script>
+<script src="~/Scripts/Customer.js"></script>
+<script language="javascript">
+   //App
+    var app = angular.module("myApp", []);
+    //Controller
+    app.controller('CustomerViewModel', CustomerViewModel);
+</script>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>SearchCustomer</title>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="CustomerViewModel"> 
+     
+            Customer Name:-<input ng-model="Customer.CustomerName" name="txtCustomerName" id="Text1" type="text" />                     
+            <br />
+            <input id="Submit1" type="button" value="Search Customer" ng-click="LoadByName()" />     
+            @Html.Partial("DisplayCustomers", Model)
+    </div>
+    <br />
+</body>
+</html>

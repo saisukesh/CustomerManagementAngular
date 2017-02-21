@@ -1,0 +1,22 @@
+﻿@model WebApplication2.ViewModel.CustomerViewModel
+@using WebApplication2.Models;
+
+
+@*@{ 
+    WebGrid obj = new WebGrid(Model.customers);
+}
+@obj.GetHtml();*@
+<table id="tbl">
+    <tr>
+        <td>Customer Code</td>
+        <td>Customer Name</td>
+        <td>Customer Amount</td>
+    </tr>
+    <tr ng-repeat="cust in Customers">
+        <td>{{cust.CustomerCode}}</td>
+        <td>{{cust.CustomerName}}</td>
+        <td style="background-color:{{ cust.CustomerAmountColor}}">
+            {{cust.CustomerAmount}}
+        </td>
+    </tr>
+</table>
